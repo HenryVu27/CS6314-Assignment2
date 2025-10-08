@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Deals - Home</title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Travel Deals</h1>
+        <p>Your Gateway to Amazing Adventures</p>
+        <div id="datetime"></div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="stays.html">Stays</a></li>
+            <li><a href="flights.html">Flights</a></li>
+            <li><a href="cars.html">Cars</a></li>
+            <li><a href="cruises.html">Cruises</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside>
+            <h3>Customize View</h3>
+            <div class="control-group">
+                <label for="fontSize">Font Size:</label>
+                <select id="fontSize">
+                    <option value="14px">Small</option>
+                    <option value="16px" selected>Medium</option>
+                    <option value="18px">Large</option>
+                    <option value="20px">Extra Large</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="bgColor">Background Color:</label>
+                <input type="color" id="bgColor" value="#ffffff">
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="mainContent">
+            <div class="hero">
+                <h2>Discover Your Next Adventure</h2>
+                <p>Book the best deals on stays, flights, cars, and cruises</p>
+            </div>
+
+            <h2>What we offer</h2>
+            <div class="card-grid">
+                <div class="card accent-sand">
+                    <h3>Stays</h3>
+                    <p>Find comfortable accommodations for your perfect getaway in Texas and California.</p>
+                    <a href="stays.html">Book Now &rarr;</a>
+                </div>
+                <div class="card accent-ocean">
+                    <h3>Flights</h3>
+                    <p>Search and book flights with ease. One-way or round trip options available.</p>
+                    <a href="flights.html">Book Now &rarr;</a>
+                </div>
+                <div class="card accent-coral">
+                    <h3>Cars</h3>
+                    <p>Rent the perfect vehicle for your journey. Choose from economy to SUV.</p>
+                    <a href="cars.html">Book Now &rarr;</a>
+                </div>
+                <div class="card accent-green">
+                    <h3>Cruises</h3>
+                    <p>Sail away to exotic destinations. Alaska, Bahamas, Europe, and Mexico await.</p>
+                    <a href="cruises.html">Book Now &rarr;</a>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem; padding: 2rem; background: #ecfeff; border-radius: 8px; border: 1px solid #a5f3fc;">
+                <h2 style="color: #111827; font-family: 'Poppins', sans-serif;">Why Choose Us?</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 1.5rem;">
+                    <div>
+                        <h3 style="color: #111827; font-family: 'Poppins', sans-serif;">Best Prices</h3>
+                        <p style="color: #6b7280;">We guarantee competitive prices on all bookings</p>
+                    </div>
+                    <div>
+                        <h3 style="color: #111827; font-family: 'Poppins', sans-serif;">Easy Booking</h3>
+                        <p style="color: #6b7280;">Simple and intuitive booking process</p>
+                    </div>
+                    <div>
+                        <h3 style="color: #111827; font-family: 'Poppins', sans-serif;">24/7 Support</h3>
+                        <p style="color: #6b7280;">Our team is always here to help you</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Travel Deals. All rights reserved. | CS 6314 - Assignment #2</p>
+    </footer>
+
+    <script src="common.js"></script>
+</body>
+</html>

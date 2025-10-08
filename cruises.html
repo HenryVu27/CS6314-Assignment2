@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Deals - Cruises</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Travel Deals</h1>
+        <p>Your Gateway to Amazing Adventures</p>
+        <div id="datetime"></div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="stays.html">Stays</a></li>
+            <li><a href="flights.html">Flights</a></li>
+            <li><a href="cars.html">Cars</a></li>
+            <li><a href="cruises.html" class="active">Cruises</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside>
+            <h3>Customize View</h3>
+            <div class="control-group">
+                <label for="fontSize">Font Size:</label>
+                <select id="fontSize">
+                    <option value="14px">Small</option>
+                    <option value="16px" selected>Medium</option>
+                    <option value="18px">Large</option>
+                    <option value="20px">Extra Large</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="bgColor">Background Color:</label>
+                <input type="color" id="bgColor" value="#ffffff">
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="mainContent">
+            <h2>Book Your Cruise</h2>
+            <p>Sail away to exotic destinations</p>
+
+            <form id="cruisesForm">
+                <div class="form-group">
+                    <label for="destination">Destination:</label>
+                    <select id="destination" name="destination">
+                        <option value="">Select a destination</option>
+                        <option value="Alaska">Alaska</option>
+                        <option value="Bahamas">Bahamas</option>
+                        <option value="Europe">Europe</option>
+                        <option value="Mexico">Mexico</option>
+                    </select>
+                    <span class="error" id="destinationError">Please select a valid destination (Alaska, Bahamas, Europe, or Mexico)</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="departingStart">Departing Between - Start Date:</label>
+                    <input type="date" id="departingStart" name="departingStart" min="2024-09-01" max="2024-12-01">
+                    <span class="error" id="departingStartError">Departing date must be between Sep 1, 2024 and Dec 1, 2024</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="departingEnd">Departing Between - End Date:</label>
+                    <input type="date" id="departingEnd" name="departingEnd" min="2024-09-01" max="2024-12-01">
+                    <span class="error" id="departingEndError">End date must be between Sep 1, 2024 and Dec 1, 2024 and after start date</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="minDuration">Minimum Duration (days):</label>
+                    <input type="number" id="minDuration" name="minDuration" min="3" max="10" value="3">
+                    <span class="error" id="minDurationError">Minimum duration cannot be less than 3 days</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="maxDuration">Maximum Duration (days):</label>
+                    <input type="number" id="maxDuration" name="maxDuration" min="3" max="10" value="7">
+                    <span class="error" id="maxDurationError">Maximum duration cannot be greater than 10 days and must be at least the minimum</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="cruiseAdults">Adults:</label>
+                    <input type="number" id="cruiseAdults" name="cruiseAdults" min="0" max="10" value="2">
+                    <span class="error" id="cruiseAdultsError">Please enter a valid number of adults</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="cruiseChildren">Children:</label>
+                    <input type="number" id="cruiseChildren" name="cruiseChildren" min="0" max="10" value="0">
+                    <span class="error" id="cruiseChildrenError">Please enter a valid number of children</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="cruiseInfants">Infants:</label>
+                    <input type="number" id="cruiseInfants" name="cruiseInfants" min="0" max="10" value="0">
+                    <span class="error" id="cruiseInfantsError">Please enter a valid number of infants</span>
+                </div>
+
+                <button type="submit" class="btn-green">Search Cruises</button>
+            </form>
+
+            <div class="results" id="results">
+                <h3>Your Cruise Search</h3>
+                <div id="cruiseDetails"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Travel Deals. All rights reserved. | CS 6314 - Assignment #2</p>
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="cruises.js"></script>
+</body>
+</html>
