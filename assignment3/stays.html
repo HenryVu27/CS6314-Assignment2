@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stays - Travel Deals</title>
+  <link rel="stylesheet" href="../mystyle.css">
+  <script defer src="js/common.js"></script>
+  <script defer src="js/stays.js"></script>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div>
+        <strong>Local Date/Time:</strong> <span id="datetime"></span>
+      </div>
+      <div class="theme-controls">
+        <label for="fontSizeControl">Font</label>
+        <select id="fontSizeControl">
+          <option value="100%">Default</option>
+          <option value="90%">Small</option>
+          <option value="110%">Large</option>
+          <option value="120%">X-Large</option>
+        </select>
+        <label for="bgColorControl">Background</label>
+        <select id="bgColorControl">
+          <option value="">Default</option>
+          <option value="#f5f5f5">Light Gray</option>
+          <option value="#e8f0fe">Light Blue</option>
+          <option value="#ffffff">White</option>
+          <option value="#121212">Dark</option>
+        </select>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="stays.html" aria-current="page">Stays</a>
+      <a href="flights.html">Flights</a>
+      <a href="cars.html">Cars</a>
+      <a href="cruises.html">Cruises</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <h1>Search Stays</h1>
+    <form id="staysForm" novalidate>
+      <div>
+        <label for="stayCity">City</label>
+        <input list="cityList" id="stayCity" name="stayCity" placeholder="Enter city in TX or CA" required>
+        <datalist id="cityList"></datalist>
+      </div>
+      <div>
+        <label for="checkIn">Check-in</label>
+        <input type="date" id="checkIn" required>
+      </div>
+      <div>
+        <label for="checkOut">Check-out</label>
+        <input type="date" id="checkOut" required>
+      </div>
+      <div>
+        <label for="stayAdults">Adults</label>
+        <input type="number" id="stayAdults" min="0" value="1">
+      </div>
+      <div>
+        <label for="stayChildren">Children</label>
+        <input type="number" id="stayChildren" min="0" value="0">
+      </div>
+      <div>
+        <label for="stayInfants">Infants</label>
+        <input type="number" id="stayInfants" min="0" value="0">
+      </div>
+      <div id="staysErrors" style="color: red;"></div>
+      <button type="submit">Search</button>
+    </form>
+
+    <section id="staysSummary" style="margin-top: 12px;"></section>
+    <section id="staysResults" style="margin-top: 12px;"></section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Travel Deals</p>
+    <p>Student: Henry Vu (NETID: ddv240000), Section: 001</p>
+    <p>Partner: Chacko Happy (NETID: ckh240000)</p>
+  </footer>
+</body>
+</html>
+
+

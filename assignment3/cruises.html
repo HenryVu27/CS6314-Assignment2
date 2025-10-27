@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cruises - Travel Deals</title>
+  <link rel="stylesheet" href="../mystyle.css">
+  <script defer src="js/common.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script defer src="js/cruises.js"></script>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div>
+        <strong>Local Date/Time:</strong> <span id="datetime"></span>
+      </div>
+      <div class="theme-controls">
+        <label for="fontSizeControl">Font</label>
+        <select id="fontSizeControl">
+          <option value="100%">Default</option>
+          <option value="90%">Small</option>
+          <option value="110%">Large</option>
+          <option value="120%">X-Large</option>
+        </select>
+        <label for="bgColorControl">Background</label>
+        <select id="bgColorControl">
+          <option value="">Default</option>
+          <option value="#f5f5f5">Light Gray</option>
+          <option value="#e8f0fe">Light Blue</option>
+          <option value="#ffffff">White</option>
+          <option value="#121212">Dark</option>
+        </select>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="stays.html">Stays</a>
+      <a href="flights.html">Flights</a>
+      <a href="cars.html">Cars</a>
+      <a href="cruises.html" aria-current="page">Cruises</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <h1>Search Cruises</h1>
+    <form id="cruisesForm" novalidate>
+      <div>
+        <label for="cruiseDestination">Destination</label>
+        <select id="cruiseDestination" required>
+          <option value="">Select</option>
+          <option>Alaska</option>
+          <option>Bahamas</option>
+          <option>Europe</option>
+          <option>Mexico</option>
+        </select>
+      </div>
+      <div>
+        <label for="departStart">Departing between (start)</label>
+        <input type="date" id="departStart" required>
+      </div>
+      <div>
+        <label for="departEnd">Departing between (end)</label>
+        <input type="date" id="departEnd" required>
+      </div>
+      <div>
+        <label for="minDays">Min Days</label>
+        <input type="number" id="minDays" min="3" max="10" value="3" required>
+      </div>
+      <div>
+        <label for="maxDays">Max Days</label>
+        <input type="number" id="maxDays" min="3" max="10" value="7" required>
+      </div>
+      <div>
+        <label for="cruiseAdults">Adults</label>
+        <input type="number" id="cruiseAdults" min="0" value="1">
+      </div>
+      <div>
+        <label for="cruiseChildren">Children</label>
+        <input type="number" id="cruiseChildren" min="0" value="0">
+      </div>
+      <div>
+        <label for="cruiseInfants">Infants</label>
+        <input type="number" id="cruiseInfants" min="0" value="0">
+      </div>
+      <div id="cruiseErrors" style="color: red;"></div>
+      <button type="submit">Submit</button>
+    </form>
+    <section id="cruisesSummary" style="margin-top: 12px;"></section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Travel Deals</p>
+    <p>Student: Henry Vu (NETID: ddv240000), Section: 001</p>
+    <p>Partner: Chacko Happy (NETID: ckh240000)</p>
+  </footer>
+</body>
+</html>
+
+
