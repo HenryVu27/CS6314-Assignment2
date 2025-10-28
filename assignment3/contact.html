@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - Travel Deals</title>
-  <link rel="stylesheet" href="../mystyle.css">
+  <link rel="stylesheet" href="mystyle.css">
   <script defer src="js/common.js"></script>
   <script defer src="js/contact.js"></script>
 </head>
@@ -32,47 +32,51 @@
         </select>
       </div>
     </div>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="stays.html">Stays</a>
-      <a href="flights.html">Flights</a>
-      <a href="cars.html">Cars</a>
-      <a href="cruises.html">Cruises</a>
-      <a href="contact.html" aria-current="page">Contact Us</a>
-      <a href="cart.html">Cart</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stays.html">Stays</a></li>
+        <li><a href="flights.html">Flights</a></li>
+        <li><a href="cars.html">Cars</a></li>
+        <li><a href="cruises.html">Cruises</a></li>
+        <li><a class="active" href="contact.html" aria-current="page">Contact Us</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
     </nav>
   </header>
 
   <main id="content">
     <h1>Contact Us</h1>
     <form id="contactForm" novalidate>
-      <div>
+      <div class="form-group">
         <label for="firstName">First Name</label>
         <input type="text" id="firstName" name="firstName" required>
       </div>
-      <div>
+      <div class="form-group">
         <label for="lastName">Last Name</label>
         <input type="text" id="lastName" name="lastName" required>
       </div>
-      <div>
+      <div class="form-group">
         <label for="phone">Phone</label>
         <input type="text" id="phone" name="phone" placeholder="(ddd)ddd-dddd" required>
       </div>
-      <fieldset>
-        <legend>Gender</legend>
-        <label><input type="radio" name="gender" value="Male"> Male</label>
-        <label><input type="radio" name="gender" value="Female"> Female</label>
-        <label><input type="radio" name="gender" value="Other"> Other</label>
-      </fieldset>
-      <div>
+      <div class="form-group">
+        <label>Gender</label>
+        <div class="radio-group">
+          <label><input type="radio" name="gender" value="Male"> Male</label>
+          <label><input type="radio" name="gender" value="Female"> Female</label>
+          <label><input type="radio" name="gender" value="Other"> Other</label>
+        </div>
+      </div>
+      <div class="form-group">
         <label for="email">Email</label>
         <input type="email" id="email" name="email" required>
       </div>
-      <div>
+      <div class="form-group">
         <label for="comment">Comment</label>
         <textarea id="comment" name="comment" rows="4" required></textarea>
       </div>
-      <div id="contactErrors" style="color: red;"></div>
+      <div id="contactErrors" class="error"></div>
       <button type="submit">Submit</button>
     </form>
     <div id="contactSuccess" style="display:none; color: green; margin-top: 12px;"></div>
@@ -80,8 +84,7 @@
 
   <footer>
     <p>&copy; 2025 Travel Deals</p>
-    <p>Student: Henry Vu (NETID: ddv240000), Section: 001</p>
-    <p>Partner: Chacko Happy (NETID: ckh240000)</p>
+    <p>Henry Vu (NETID: ddv240000), Chacko Happy (NETID: ckh240000), Section: 001</p>
   </footer>
 </body>
 </html>

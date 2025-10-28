@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cart - Travel Deals</title>
-  <link rel="stylesheet" href="../mystyle.css">
+  <link rel="stylesheet" href="mystyle.css">
   <script defer src="js/common.js"></script>
   <script defer src="js/cart.js"></script>
 </head>
@@ -32,29 +32,41 @@
         </select>
       </div>
     </div>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="stays.html">Stays</a>
-      <a href="flights.html">Flights</a>
-      <a href="cars.html">Cars</a>
-      <a href="cruises.html">Cruises</a>
-      <a href="contact.html">Contact Us</a>
-      <a href="cart.html" aria-current="page">Cart</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stays.html">Stays</a></li>
+        <li><a href="flights.html">Flights</a></li>
+        <li><a href="cars.html">Cars</a></li>
+        <li><a href="cruises.html">Cruises</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a class="active" href="cart.html" aria-current="page">Cart</a></li>
+      </ul>
     </nav>
   </header>
 
   <main id="content">
     <h1>Your Cart</h1>
     <section id="cartFlights"></section>
+    <section id="passengersForm" class="mt-2"></section>
+    <div class="mb-2">
+      <button id="bookFlightsBtn" class="btn">Book Flights</button>
+    </div>
     <section id="cartStays"></section>
+    <div class="mb-2">
+      <button id="bookHotelsBtn" class="btn btn-green">Book Hotels</button>
+    </div>
     <section id="cartCars"></section>
+    <div class="mb-2">
+      <button id="bookCarsBtn" class="btn btn-amber">Book Cars</button>
+    </div>
     <section id="cartTotals" style="margin-top: 12px;"></section>
+    <section id="bookingOutput" class="mt-2"></section>
   </main>
 
   <footer>
     <p>&copy; 2025 Travel Deals</p>
-    <p>Student: Henry Vu (NETID: ddv240000), Section: 001</p>
-    <p>Partner: Chacko Happy (NETID: ckh240000)</p>
+    <p>Henry Vu (NETID: ddv240000), Chacko Happy (NETID: ckh240000), Section: 001</p>
   </footer>
 </body>
 </html>

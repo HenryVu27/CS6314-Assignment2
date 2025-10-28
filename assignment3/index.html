@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Travel Deals - Home</title>
-  <link rel="stylesheet" href="../mystyle.css">
+  <link rel="stylesheet" href="mystyle.css">
   <script defer src="js/common.js"></script>
 </head>
 <body>
@@ -31,26 +31,56 @@
         </select>
       </div>
     </div>
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="stays.html">Stays</a>
-      <a href="flights.html">Flights</a>
-      <a href="cars.html">Cars</a>
-      <a href="cruises.html">Cruises</a>
-      <a href="contact.html">Contact Us</a>
-      <a href="cart.html">Cart</a>
+    <nav>
+      <ul>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="stays.html">Stays</a></li>
+        <li><a href="flights.html">Flights</a></li>
+        <li><a href="cars.html">Cars</a></li>
+        <li><a href="cruises.html">Cruises</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="cart.html">Cart</a></li>
+      </ul>
     </nav>
   </header>
 
   <main id="content">
-    <h1>Welcome to Travel Deals</h1>
-    <p>Use the navigation above to explore flights, stays, cars, cruises, and manage your cart.</p>
+    <section class="hero">
+      <h2>Plan Your Next Getaway</h2>
+      <p>Find great deals on flights, stays, cars, and cruises — all in one place.</p>
+      <div>
+        <a class="btn" href="flights.html">Search Flights</a>
+        <a class="btn btn-green" href="stays.html">Find Stays</a>
+        <a class="btn btn-amber" href="cars.html">Rent a Car</a>
+      </div>
+    </section>
+    <div class="card-grid">
+      <div class="card accent-ocean">
+        <h3>Flights</h3>
+        <p>Flexible trip types with passenger details.</p>
+        <a href="flights.html">Start</a>
+      </div>
+      <div class="card accent-sand">
+        <h3>Stays</h3>
+        <p>Hotels across TX and CA with smart room calculation.</p>
+        <a href="stays.html">Start</a>
+      </div>
+      <div class="card accent-green">
+        <h3>Cars</h3>
+        <p>DOM-based suggestions from your previous bookings.</p>
+        <a href="cars.html">Start</a>
+      </div>
+      <div class="card accent-coral">
+        <h3>Cruises</h3>
+        <p>jQuery-powered inputs and validation.</p>
+        <a href="cruises.html">Start</a>
+      </div>
+    </div>
   </main>
 
   <footer>
     <p>&copy; 2025 Travel Deals</p>
-    <p>Student: Henry Vu (NETID: ddv240000), Section: 001</p>
-    <p>Partner: Chacko Happy (NETID: ckh240000)</p>
+    <p>Henry Vu (NETID: ddv240000), Chacko Happy (NETID: ckh240000), Section: 001</p>
   </footer>
 </body>
 </html>
