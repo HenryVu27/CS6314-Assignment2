@@ -1,0 +1,602 @@
+CS 6314 - Assignment #4
+Due Date: 12/3/25, 11:59 pm
+
+================================================================================
+OVERVIEW
+================================================================================
+
+In this assignment, you are supposed to develop a web application for travel
+deals using HTML, CSS, Javascript, jQuery, XML, JSON, Ajax, PHP and MySQL.
+The app should have 7 web pages, including:
+- stays
+- flights
+- contact-us
+- register
+- login
+- cart
+- my-account
+
+================================================================================
+PAGE LAYOUT
+================================================================================
+
+Using an external CSS (mystyle.css), add the following layout to all web pages:
+
++------------------------------------------------------------------+
+|                            Header                                 |
++------------------------------------------------------------------+
+|                   Horizontal Navigation Bar                       |
++------------------------------------------------------------------+
+|        |                                                          |
+|  Side  |                  Main Content                           |
+|        |                                                          |
++------------------------------------------------------------------+
+|                            Footer                                 |
++------------------------------------------------------------------+
+
+Please note: For the navigation bar, you must have links to all 7 web pages
+in your web application.
+
+================================================================================
+REQUIREMENT 1: USER REGISTRATION
+================================================================================
+
+Add a register web page to your web application to register users. You should
+ask each user to enter:
+- Phone number
+- Password
+- FirstName
+- LastName
+- Date of birth
+- Email
+- Gender (as radio button)
+
+VALIDATION RULES:
+• User must enter Phone number, Password, FirstName, LastName, Date of birth,
+  and Email. Gender is not a required user input.
+• Phone number is a unique number. User cannot use a phone number that
+  already has been used by another user.
+• Phone number must be formatted as ddd-ddd-dddd
+• User must enter the same Password two times.
+• The Password must be at least 8 characters.
+• Date of birth must have 2 digits for month, 2 digits for day, and four digits
+  for year
+• Email must contain @ and .com
+
+If the user inputs are not valid, prompt the user.
+
+After validating the user's inputs, you should insert the user's information
+into the "users" table in your database.
+
+DATABASE TABLE - users:
+Fields: Phone number, Password, FirstName, LastName, Date of birth, Gender,
+and Email
+Primary Key: Phone number (unique)
+
+After inserting the above information into the table successfully, you should
+prompt the user.
+
+The User should be able to log in to your web application using her/his Phone
+number and the password.
+
+ADMIN ACCOUNT:
+Phone number for the admin should be 222-222-2222
+
+================================================================================
+REQUIREMENT 2: DISPLAY DATE AND TIME
+================================================================================
+
+Display current local date and time in your web application.
+
+================================================================================
+REQUIREMENT 3: DISPLAY USER NAME AFTER LOGIN
+================================================================================
+
+After login to the web application, the user should be able to see his/her
+first name and last name in all webpages.
+
+================================================================================
+REQUIREMENT 4: CONTACT FORM
+================================================================================
+
+After login to the web application, user should be able to submit a comment
+in the contact page.
+
+VALIDATION:
+• The comment must be at least 10 characters.
+• You should validate the user input when the user clicks a "submit" button
+  in the contact page.
+• If the user doesn't enter valid information as specified above or did not
+  login to the web application, you must prompt the user to login and enter
+  valid information.
+
+After validating the user input:
+1. Assign a unique number (contact-id) to the comment
+2. Store the following in a XML file:
+   - Contact-id
+   - Phone number
+   - FirstName
+   - LastName
+   - Date of birth
+   - Email
+   - Gender
+
+================================================================================
+REQUIREMENT 5: CUSTOMIZATION
+================================================================================
+
+Allow users to change:
+• Font size of main content
+• Background color of your web application
+
+================================================================================
+REQUIREMENT 6: FLIGHTS JSON FILE
+================================================================================
+
+Create a JSON file for all available flights. The JSON file should include
+information about available flights including:
+- flight-id
+- origin
+- destination
+- departure date
+- arrival date
+- departure time
+- arrival time
+- number of available seats
+- price
+
+Requirements:
+• At least 50 flights between a city in Texas and a city in California
+• Date range: Sep 1, 2024 to Dec 1st 2024
+
+The admin should be able to load the JSON file into the "flights" table in
+the database after login to the webpage and in the my-account page.
+
+DATABASE TABLE - flights:
+Fields (9 total):
+- flight-id (unique)
+- origin
+- destination
+- departure date
+- arrival date
+- departure time
+- arrival time
+- number of available seats
+- price
+
+================================================================================
+REQUIREMENT 7: FLIGHT BOOKING SYSTEM
+================================================================================
+
+After login to the web application, in the flight webpage, the user should be
+able to choose the type of trip:
+
+ONE-WAY TRIP:
+- User should be able to enter: origin, destination, and departure date
+
+ROUND TRIP:
+- User should be able to enter: origin, destination, departure date for
+  departing flight and arriving flight
+
+PASSENGER SELECTION:
+• In the flight webpage, there should be a passenger icon
+• If the user clicks on the passenger icon, a form should be displayed
+• In this form, the user should be able to enter the number of passengers
+  for each category (adults, children, or infants)
+
+SEARCH VALIDATION:
+When the user clicks search button, after validating the user inputs, you
+should display all the above information entered by the user. If any user
+input is not valid, you should inform the user.
+
+Validate user inputs for this page as following:
+• The user must enter departure date anytime between Sep 1, 2024 to Dec 1st 2024
+• Origin and destination must be a city in Texas or California
+• Number of passengers for each category cannot be more than 4
+
+--------------------------------------------------------------------------------
+ONE-WAY TRIP SEARCH RESULTS:
+--------------------------------------------------------------------------------
+
+If the user selected a one-way trip, when the user clicks the search button,
+if the entered information are valid, you should retrieve and display the
+information for all available flights:
+- flight-id
+- origin
+- destination
+- departure date
+- arrival date
+- departure time
+- arrival time
+- number of available seats
+
+Requirements:
+• The available flights should be retrieved from "flights" table in your database
+• Must have enough available seats for all passengers
+• If there are no available flights on the requested departure date, you should
+  retrieve and display the information for available flights within 3 days
+  before and after the requested departure date
+• The user should be able to select a flight and place it in the cart
+
+--------------------------------------------------------------------------------
+ONE-WAY TRIP CART:
+--------------------------------------------------------------------------------
+
+In the cart page, you should display the information of the selected flight:
+- flight-id
+- origin
+- destination
+- departure date
+- arrival date
+- departure time
+- arrival time
+
+PRICING:
+• You also need to display total price for all passengers
+• Infant ticket is 10% of the adult ticket price
+• Children ticket is 70% of the adult ticket price
+
+BOOKING:
+The user should be able to book the selected flight after entering first name,
+last name, date of birth and SSN for each passenger.
+
+When the user books a flight for all passengers, you need to:
+1. Assign a unique flight booking id to the selected flight in the cart
+2. Assign a unique ticket id to each ticket (one booking may have several
+   tickets; one ticket for each passenger)
+3. Insert booking, tickets, and passenger information in:
+   - "flight-booking" table
+   - "ticket" table
+   - "passenger" table
+4. Update available number of seats of the booked flight in the flights table
+
+DATABASE TABLES FOR ONE-WAY:
+
+Flights table (9 fields):
+- flight-id (unique)
+- origin
+- destination
+- departure date
+- arrival date
+- departure time
+- arrival time
+- number of available seats
+- price
+
+Passenger table (5 fields):
+- SSN (unique)
+- first name
+- last name
+- date of birth
+- category (adults, children, or infants)
+
+Flight-booking table (3 fields):
+- flight-booking-id
+- flight-id
+- total price for all passengers
+
+Tickets table (4 fields):
+- ticket-id (unique)
+- flight-booking-id
+- SSN
+- price for the passenger
+
+CONFIRMATION:
+After booking the selected flight, you should display all the information of
+the booked flight:
+- flight-booking-id
+- flight-id
+- origin
+- destination
+- departure date
+- arrival date
+- departure time
+- arrival time
+- total price for all passengers
+
+You should also display ticket information for each passenger:
+- ticket-id
+- flight-booking-id
+- SSN
+- first name
+- last name
+- date of birth
+- price for each ticket
+
+--------------------------------------------------------------------------------
+ROUND TRIP SEARCH RESULTS:
+--------------------------------------------------------------------------------
+
+If the user selected round trip, when the user clicks the search button, if
+the entered information are valid, you should display the information for all
+available flights:
+- flight-id
+- origin
+- destination
+- departure date
+- arrival date
+- departure time
+- arrival time
+- number of available seats
+
+For BOTH:
+- Departing flight
+- Returning flight
+
+Requirements:
+• The available flights must have enough available seats for all passengers
+• If there are no available flights on the requested departure date, you should
+  display the information for available flights within 3 days before and after
+  the requested departure date
+• The user should be able to select a flight as departing flight and a flight
+  as returning flight and place them in the cart
+
+--------------------------------------------------------------------------------
+ROUND TRIP CART:
+--------------------------------------------------------------------------------
+
+In the cart page, you should display the information of the selected departing
+flight and returning flight:
+- flight-id
+- origin
+- destination
+- departure date
+- arrival date
+- departure time
+- arrival time
+
+PRICING:
+• You need to display total price for all passengers for BOTH departing flight
+  and returning flight
+• Infant ticket is 10% of the adult ticket price
+• Children ticket is 70% of the adult ticket price
+
+BOOKING:
+The user should be able to book both departing flight and returning flight
+after entering first name, last name, date of birth and SSN for each passenger.
+
+When the user books a flight for all passengers, you need to:
+1. Assign a unique flight booking id to BOTH departing flight and returning
+   flight in the cart
+2. Assign a unique ticket id to each ticket (one booking may have several
+   tickets; one ticket for departing flight and one ticket for returning flight
+   for each passenger)
+3. Insert booking, tickets, and passenger information in:
+   - "flight-booking" table
+   - "ticket" table
+   - "passenger" table
+4. Update available number of seats of the booked flight in the flights table
+
+DATABASE TABLES FOR ROUND TRIP (same as one-way):
+
+Flights table (9 fields):
+- flight-id (unique)
+- origin
+- destination
+- departure date
+- arrival date
+- departure time
+- arrival time
+- number of available seats
+- price
+
+Passenger table (5 fields):
+- SSN (unique)
+- first name
+- last name
+- date of birth
+- category (adults, children, or infants)
+
+Flight-booking table (3 fields):
+- flight-booking-id
+- flight-id
+- total price for all passengers
+
+Tickets table (4 fields):
+- ticket-id (unique)
+- flight-booking-id
+- SSN
+- price for the passenger
+
+CONFIRMATION:
+After booking the selected departing flight and returning flight, you should
+display all the information of the booked flights:
+- flight-booking-id
+- flight-id
+- origin
+- destination
+- departure date
+- arrival date
+- departure time
+- arrival time
+- total price for all passengers
+
+You should also display ticket information for departing flight and for
+returning flight for each passenger:
+- ticket-id
+- flight-booking-id
+- SSN
+- first name
+- last name
+- date of birth
+- price for each ticket
+
+================================================================================
+REQUIREMENT 8: HOTEL BOOKING SYSTEM (STAYS)
+================================================================================
+
+After login to the web application, in the stays webpage, the user should be
+able to enter:
+- Name of city
+- Check in date
+- Check out date
+- Number of guests for each category (adults, children, or infants)
+
+When the user clicks a search button, after validating the user inputs, you
+should display all the information entered by the user. You should also display
+the number of rooms the user needs.
+
+If any user input is not valid, you should inform the user.
+
+VALIDATION RULES:
+• The user must enter check in date and check out date anytime between
+  Sep 1, 2024 to Dec 1st 2024
+• The city must be a city in Texas or California
+• Number of guests cannot be more than 2 for each room. However infants can
+  stay with adults even if the number of guests exceeds 2
+
+--------------------------------------------------------------------------------
+HOTELS XML FILE:
+--------------------------------------------------------------------------------
+
+Create an XML file for all available hotels. The XML file should include
+information about available hotels including:
+- hotel-id
+- hotel name
+- city
+- price per night
+
+Requirements:
+• At least 20 hotels
+• For simplicity, we assume hotels always have available rooms
+
+The admin should be able to load the XML file into the "hotels" table in the
+database after login to the webpage and in the my-account page.
+
+DATABASE TABLE - hotels (4 fields):
+- hotel-id
+- hotel name
+- city
+- price per night
+
+--------------------------------------------------------------------------------
+HOTEL SEARCH RESULTS:
+--------------------------------------------------------------------------------
+
+When the user clicks the search button, if the entered information are valid,
+you should retrieve and display the information for all available hotels in
+the requested city from hotels table:
+- hotel-id
+- hotel name
+- city
+- price per night
+
+The user should be able to select a hotel and place it in the cart.
+
+--------------------------------------------------------------------------------
+HOTEL CART:
+--------------------------------------------------------------------------------
+
+In the cart page, you should display the information of the selected hotel:
+- hotel-id
+- hotel name
+- city
+- number of guests per category
+- number of rooms
+- check in date
+- check out date
+- price per night for each room
+- total price
+
+BOOKING:
+The user should be able to book the selected hotel after entering first name,
+last name, date of birth and SSN for each guest.
+
+When the user books a hotel for all guests, you need to:
+1. Assign a unique hotel booking id to the selected hotel in the cart
+2. Insert booking information in "hotel-booking" table and "guesses" table
+
+DATABASE TABLES FOR HOTELS:
+
+Hotel table (4 fields):
+- hotel-id
+- hotel name
+- city
+- price per night
+
+Guesses table (6 fields):
+- SSN (unique)
+- hotel-booking-id
+- first name
+- last name
+- date of birth
+- category (adults, children, or infants)
+
+Hotel-booking table (7 fields):
+- hotel-booking-id
+- hotel-id
+- check in date
+- check out date
+- number of rooms
+- price per night for each room
+- total price
+
+CONFIRMATION:
+After booking the selected hotel, you should display all the information of
+the booked hotels:
+- hotel-booking-id
+- hotel-id
+- hotel name
+- city
+- price per night
+- number of rooms
+- check in date
+- check out date
+- price per night for each room
+- total price
+
+You also need to display for all guests:
+- SSN
+- first name
+- last name
+- date of birth
+- category (adults, children, or infants)
+
+================================================================================
+REQUIREMENT 9: MY ACCOUNT PAGE - USER QUERIES
+================================================================================
+
+In the account page, users should be able to:
+
+1. Retrieve all the information about booked flights and booked hotels using:
+   - hotel-booking-id
+   - Flight-booking-id
+
+2. Retrieve information of all passengers in a booked flight using:
+   - Flight-booking-id
+
+3. Retrieve all the information of all booked flights and booked hotels for:
+   - SEP 2024
+
+4. Retrieve all the information about booked flights for specific person using:
+   - SSN
+
+================================================================================
+REQUIREMENT 10: MY ACCOUNT PAGE - ADMIN QUERIES
+================================================================================
+
+In the account page, the admin should be able to:
+
+1. Retrieve all booked flights that will depart from a city in Texas from
+   Sep 2024 to Oct 2024
+
+2. Retrieve all information for booked hotels in a city in Texas from
+   Sep 2024 to Oct 2024
+
+3. Retrieve all information for most expensive booked hotels
+
+4. Retrieve all booked flights with an infant passenger
+
+5. Retrieve all booked flights with an infant passenger and at least 5 children
+
+6. Retrieve all the information of most expensive booked flights
+
+7. Retrieve all the information about booked flights departing from a city in
+   Texas and have no infant passenger
+
+8. Retrieve the number of booked flights that will arrive to a city in
+   California on Sep 2024 or Oct 2024
+
+================================================================================
+END OF REQUIREMENTS
+================================================================================

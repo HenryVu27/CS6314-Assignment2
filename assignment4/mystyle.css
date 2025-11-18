@@ -40,6 +40,12 @@ header h1 {
     margin-top: 0.25rem;
 }
 
+#user-info {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    font-weight: 500;
+}
+
 /* Navigation Bar */
 nav {
     background: linear-gradient(to bottom, #f8fafc, #ffffff);
@@ -189,6 +195,7 @@ main h2 {
 .form-group input[type="tel"],
 .form-group input[type="date"],
 .form-group input[type="number"],
+.form-group input[type="password"],
 .form-group select,
 .form-group textarea {
     width: 100%;
@@ -275,6 +282,14 @@ button:hover,
     background: #db2777;
 }
 
+.btn-red {
+    background: #ef4444;
+}
+
+.btn-red:hover {
+    background: #dc2626;
+}
+
 button:active,
 .btn:active {
     transform: translateY(0);
@@ -285,17 +300,13 @@ button:active,
     margin-top: 2rem;
     padding: 1.5rem;
     background: #f0fdf4;
+    border-left: 4px solid #10B981;
     border-radius: 8px;
     display: none;
 }
 
 .results.show {
     display: block;
-}
-
-.results.error {
-    background: #fee2e2;
-    color: #991b1b;
 }
 
 .results h3 {
@@ -330,6 +341,44 @@ button:active,
 .form-group.has-error select,
 .form-group.has-error textarea {
     border-color: #e74c3c;
+}
+
+/* Success Messages */
+.success-message {
+    background: #d1fae5;
+    border-left: 4px solid #10B981;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    display: none;
+}
+
+.success-message.show {
+    display: block;
+}
+
+.alert {
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+}
+
+.alert-success {
+    background: #d1fae5;
+    border-left: 4px solid #10B981;
+    color: #065f46;
+}
+
+.alert-error {
+    background: #fee2e2;
+    border-left: 4px solid #ef4444;
+    color: #991b1b;
+}
+
+.alert-warning {
+    background: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    color: #92400e;
 }
 
 /* Footer */
@@ -419,6 +468,44 @@ footer p {
     color: #1d4ed8;
 }
 
+/* Flight/Hotel Cards */
+.flight-card, .hotel-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.2s ease;
+}
+
+.flight-card:hover, .hotel-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.flight-card h4, .hotel-card h4 {
+    color: #111827;
+    margin-bottom: 0.75rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.flight-info, .hotel-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.info-item {
+    font-size: 0.9rem;
+}
+
+.info-item strong {
+    color: #111827;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
 /* Passenger Modal */
 .passenger-icon {
     display: inline-block;
@@ -463,6 +550,97 @@ footer p {
     gap: 0.5rem;
 }
 
+/* Cart Styles */
+.cart-item {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.cart-summary {
+    background: #eff6ff;
+    border: 2px solid #3b82f6;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.cart-summary h3 {
+    color: #1e40af;
+    margin-bottom: 1rem;
+}
+
+.price-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.price-line.total {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #1e40af;
+    border-top: 2px solid #3b82f6;
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table th,
+table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+table th {
+    background: #f9fafb;
+    font-weight: 600;
+    color: #111827;
+    font-family: 'Poppins', sans-serif;
+}
+
+table tr:hover {
+    background: #f9fafb;
+}
+
+/* Admin Panel Styles */
+.admin-panel {
+    background: #fef3c7;
+    border: 2px solid #f59e0b;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.admin-panel h3 {
+    color: #92400e;
+    margin-bottom: 1rem;
+}
+
+.query-section {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.query-section h4 {
+    color: #111827;
+    margin-bottom: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
@@ -489,15 +667,10 @@ footer p {
     .card-grid {
         grid-template-columns: 1fr;
     }
-}
 
-/* Beach Color Accents */
-.accent-ocean,
-.accent-sand,
-.accent-green,
-.accent-coral {
-    background: #ffffff;
-    border-color: #e5e7eb;
+    .flight-info, .hotel-info {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Utility Classes */
@@ -513,5 +686,3 @@ footer p {
 .mt-2 { margin-top: 2rem; }
 .mb-1 { margin-bottom: 1rem; }
 .mb-2 { margin-bottom: 2rem; }
-
-

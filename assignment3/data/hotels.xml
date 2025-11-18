@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hotels>
-  <hotel id="H001" name="Lone Star Suites" city="Dallas" rooms="25" price="120" />
-  <hotel id="H002" name="Bay Breeze Inn" city="San Francisco" rooms="18" price="160" />
-  <hotel id="H003" name="Capitol Stay" city="Austin" rooms="22" price="130" />
-  <hotel id="H004" name="Space City Hotel" city="Houston" rooms="30" price="110" />
-  <hotel id="H005" name="Riverwalk Lodge" city="San Antonio" rooms="20" price="115" />
-  <hotel id="H006" name="Desert View Inn" city="El Paso" rooms="15" price="95" />
-  <hotel id="H007" name="Pacific Coast Hotel" city="Los Angeles" rooms="28" price="150" />
-  <hotel id="H008" name="Harbor Lights" city="San Diego" rooms="24" price="140" />
-  <hotel id="H009" name="Silicon Suites" city="San Jose" rooms="26" price="145" />
-  <hotel id="H010" name="Capitol Shores" city="Sacramento" rooms="19" price="125" />
-  <hotel id="H011" name="Uptown Inn" city="Dallas" rooms="21" price="115" />
-  <hotel id="H012" name="Golden Gate Suites" city="San Francisco" rooms="17" price="170" />
-  <hotel id="H013" name="Live Music Lodge" city="Austin" rooms="23" price="135" />
-  <hotel id="H014" name="Galleria Grand" city="Houston" rooms="27" price="145" />
-  <hotel id="H015" name="Alamo Inn" city="San Antonio" rooms="18" price="105" />
-  <hotel id="H016" name="Sunset Motel" city="El Paso" rooms="16" price="90" />
-  <hotel id="H017" name="Hollywood Haven" city="Los Angeles" rooms="29" price="155" />
-  <hotel id="H018" name="Seaside Suites" city="San Diego" rooms="25" price="150" />
-  <hotel id="H019" name="Tech Hub Hotel" city="San Jose" rooms="22" price="140" />
-  <hotel id="H020" name="River State Inn" city="Sacramento" rooms="20" price="120" />
+  <!-- Each hotel includes: hotel-id, name, city, available rooms, date, and price per night -->
+  <hotel id="H001" name="Lone Star Suites" city="Dallas" rooms="25" date="2024-09-01" price="120" />
+  <hotel id="H002" name="Bay Breeze Inn" city="San Francisco" rooms="18" date="2024-09-01" price="160" />
+  <hotel id="H003" name="Capitol Stay" city="Austin" rooms="22" date="2024-09-05" price="130" />
+  <hotel id="H004" name="Space City Hotel" city="Houston" rooms="30" date="2024-09-05" price="110" />
+  <hotel id="H005" name="Riverwalk Lodge" city="San Antonio" rooms="20" date="2024-09-10" price="115" />
+  <hotel id="H006" name="Desert View Inn" city="El Paso" rooms="15" date="2024-09-10" price="95" />
+  <hotel id="H007" name="Pacific Coast Hotel" city="Los Angeles" rooms="28" date="2024-09-15" price="150" />
+  <hotel id="H008" name="Harbor Lights" city="San Diego" rooms="24" date="2024-09-15" price="140" />
+  <hotel id="H009" name="Silicon Suites" city="San Jose" rooms="26" date="2024-09-20" price="145" />
+  <hotel id="H010" name="Capitol Shores" city="Sacramento" rooms="19" date="2024-09-20" price="125" />
+  <hotel id="H011" name="Uptown Inn" city="Dallas" rooms="21" date="2024-09-25" price="115" />
+  <hotel id="H012" name="Golden Gate Suites" city="San Francisco" rooms="17" date="2024-09-25" price="170" />
+  <hotel id="H013" name="Live Music Lodge" city="Austin" rooms="23" date="2024-10-01" price="135" />
+  <hotel id="H014" name="Galleria Grand" city="Houston" rooms="27" date="2024-10-01" price="145" />
+  <hotel id="H015" name="Alamo Inn" city="San Antonio" rooms="18" date="2024-10-05" price="105" />
+  <hotel id="H016" name="Sunset Motel" city="El Paso" rooms="16" date="2024-10-05" price="90" />
+  <hotel id="H017" name="Hollywood Haven" city="Los Angeles" rooms="29" date="2024-10-10" price="155" />
+  <hotel id="H018" name="Seaside Suites" city="San Diego" rooms="25" date="2024-10-10" price="150" />
+  <hotel id="H019" name="Tech Hub Hotel" city="San Jose" rooms="22" date="2024-10-15" price="140" />
+  <hotel id="H020" name="River State Inn" city="Sacramento" rooms="20" date="2024-10-15" price="120" />
+  <hotel id="H021" name="Longhorn Retreat" city="Dallas" rooms="24" date="2024-11-01" price="125" />
+  <hotel id="H022" name="Fisherman's Lodge" city="San Francisco" rooms="16" date="2024-11-05" price="165" />
+  <hotel id="H023" name="Hill Country Hotel" city="Austin" rooms="21" date="2024-11-10" price="128" />
+  <hotel id="H024" name="Bayou Suites" city="Houston" rooms="23" date="2024-11-15" price="118" />
+  <hotel id="H025" name="Mission Plaza Hotel" city="San Antonio" rooms="19" date="2024-11-20" price="108" />
 </hotels>
 
 

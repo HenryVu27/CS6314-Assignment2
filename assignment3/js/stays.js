@@ -67,6 +67,7 @@
         const name = h.getAttribute('name');
         return `<div style="border:1px solid #ddd;padding:8px;border-radius:6px;margin:6px 0;">
           <div><strong>${id}</strong> - ${name} (${h.getAttribute('city')})</div>
+          <div>Stay: ${vals.checkIn} → ${vals.checkOut}</div>
           <div>Price per night: $${price}</div>
           <button class="btn btn-green" data-hotel='${JSON.stringify({
             hotelId: id,

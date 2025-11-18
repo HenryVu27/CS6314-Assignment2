@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cruises>
+  <!-- Alaska Cruises -->
+  <cruise id="CR001" destination="Alaska" departurePort="Seattle" departureDate="2024-09-05" duration="7" pricePerPerson="1299" availableCabins="25" />
+  <cruise id="CR002" destination="Alaska" departurePort="Vancouver" departureDate="2024-09-12" duration="7" pricePerPerson="1399" availableCabins="30" />
+  <cruise id="CR003" destination="Alaska" departurePort="Seattle" departureDate="2024-09-20" duration="10" pricePerPerson="1899" availableCabins="20" />
+  <cruise id="CR004" destination="Alaska" departurePort="San Francisco" departureDate="2024-10-03" duration="8" pricePerPerson="1599" availableCabins="22" />
+  <cruise id="CR005" destination="Alaska" departurePort="Seattle" departureDate="2024-10-15" duration="7" pricePerPerson="1199" availableCabins="28" />
+  <cruise id="CR006" destination="Alaska" departurePort="Vancouver" departureDate="2024-11-02" duration="6" pricePerPerson="1099" availableCabins="24" />
+
+  <!-- Bahamas Cruises -->
+  <cruise id="CR007" destination="Bahamas" departurePort="Miami" departureDate="2024-09-08" duration="3" pricePerPerson="499" availableCabins="40" />
+  <cruise id="CR008" destination="Bahamas" departurePort="Port Canaveral" departureDate="2024-09-15" duration="4" pricePerPerson="599" availableCabins="35" />
+  <cruise id="CR009" destination="Bahamas" departurePort="Miami" departureDate="2024-09-22" duration="5" pricePerPerson="749" availableCabins="30" />
+  <cruise id="CR010" destination="Bahamas" departurePort="Fort Lauderdale" departureDate="2024-10-05" duration="3" pricePerPerson="449" availableCabins="38" />
+  <cruise id="CR011" destination="Bahamas" departurePort="Miami" departureDate="2024-10-18" duration="4" pricePerPerson="579" availableCabins="32" />
+  <cruise id="CR012" destination="Bahamas" departurePort="Port Canaveral" departureDate="2024-11-08" duration="5" pricePerPerson="699" availableCabins="36" />
+  <cruise id="CR013" destination="Bahamas" departurePort="Miami" departureDate="2024-11-22" duration="3" pricePerPerson="479" availableCabins="42" />
+
+  <!-- Europe Cruises -->
+  <cruise id="CR014" destination="Europe" departurePort="Barcelona" departureDate="2024-09-10" duration="7" pricePerPerson="1799" availableCabins="28" />
+  <cruise id="CR015" destination="Europe" departurePort="Rome" departureDate="2024-09-18" duration="10" pricePerPerson="2499" availableCabins="20" />
+  <cruise id="CR016" destination="Europe" departurePort="Venice" departureDate="2024-10-01" duration="8" pricePerPerson="2099" availableCabins="22" />
+  <cruise id="CR017" destination="Europe" departurePort="Athens" departureDate="2024-10-12" duration="7" pricePerPerson="1899" availableCabins="26" />
+  <cruise id="CR018" destination="Europe" departurePort="Barcelona" departureDate="2024-10-25" duration="9" pricePerPerson="2299" availableCabins="24" />
+  <cruise id="CR019" destination="Europe" departurePort="Southampton" departureDate="2024-11-05" duration="7" pricePerPerson="1699" availableCabins="30" />
+  <cruise id="CR020" destination="Europe" departurePort="Rome" departureDate="2024-11-18" duration="6" pricePerPerson="1599" availableCabins="25" />
+
+  <!-- Mexico Cruises -->
+  <cruise id="CR021" destination="Mexico" departurePort="Los Angeles" departureDate="2024-09-07" duration="4" pricePerPerson="649" availableCabins="34" />
+  <cruise id="CR022" destination="Mexico" departurePort="San Diego" departureDate="2024-09-14" duration="5" pricePerPerson="799" availableCabins="30" />
+  <cruise id="CR023" destination="Mexico" departurePort="Galveston" departureDate="2024-09-21" duration="6" pricePerPerson="899" availableCabins="28" />
+  <cruise id="CR024" destination="Mexico" departurePort="Los Angeles" departureDate="2024-10-04" duration="7" pricePerPerson="1099" availableCabins="26" />
+  <cruise id="CR025" destination="Mexico" departurePort="Long Beach" departureDate="2024-10-16" duration="5" pricePerPerson="749" availableCabins="32" />
+  <cruise id="CR026" destination="Mexico" departurePort="San Diego" departureDate="2024-10-28" duration="4" pricePerPerson="599" availableCabins="36" />
+  <cruise id="CR027" destination="Mexico" departurePort="Galveston" departureDate="2024-11-10" duration="6" pricePerPerson="849" availableCabins="30" />
+  <cruise id="CR028" destination="Mexico" departurePort="Los Angeles" departureDate="2024-11-24" duration="5" pricePerPerson="729" availableCabins="34" />
+</cruises>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flights - Travel Deals</title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Travel Deals</h1>
+        <p>Your Gateway to Amazing Adventures</p>
+        <div id="datetime"></div>
+        <div id="user-info"></div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="stays.html">Stays</a></li>
+            <li><a href="flights.html" class="active">Flights</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="my-account.html">My Account</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside>
+            <h3>Customize View</h3>
+            <div class="control-group">
+                <label for="fontSize">Font Size:</label>
+                <select id="fontSize">
+                    <option value="14px">Small</option>
+                    <option value="16px" selected>Medium</option>
+                    <option value="18px">Large</option>
+                    <option value="20px">Extra Large</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="bgColor">Background Color:</label>
+                <input type="color" id="bgColor" value="#ffffff">
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="mainContent">
+            <h2>Search Flights</h2>
+
+            <div id="alert-container"></div>
+
+            <form id="flightSearchForm">
+                <!-- Trip Type Selection -->
+                <div class="form-group">
+                    <label>Trip Type</label>
+                    <div class="trip-type">
+                        <label>
+                            <input type="radio" name="tripType" value="oneway" checked>
+                            One-way
+                        </label>
+                        <label>
+                            <input type="radio" name="tripType" value="roundtrip">
+                            Round Trip
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Origin and Destination -->
+                <div class="form-group">
+                    <label for="origin">Origin (City in Texas or California) *</label>
+                    <select id="origin" name="origin" required>
+                        <option value="">Select City</option>
+                        <optgroup label="Texas">
+                            <option value="Dallas">Dallas</option>
+                            <option value="Houston">Houston</option>
+                            <option value="Austin">Austin</option>
+                            <option value="San Antonio">San Antonio</option>
+                        </optgroup>
+                        <optgroup label="California">
+                            <option value="Los Angeles">Los Angeles</option>
+                            <option value="San Francisco">San Francisco</option>
+                            <option value="San Diego">San Diego</option>
+                            <option value="Sacramento">Sacramento</option>
+                        </optgroup>
+                    </select>
+                    <span class="error" id="origin-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="destination">Destination (City in Texas or California) *</label>
+                    <select id="destination" name="destination" required>
+                        <option value="">Select City</option>
+                        <optgroup label="Texas">
+                            <option value="Dallas">Dallas</option>
+                            <option value="Houston">Houston</option>
+                            <option value="Austin">Austin</option>
+                            <option value="San Antonio">San Antonio</option>
+                        </optgroup>
+                        <optgroup label="California">
+                            <option value="Los Angeles">Los Angeles</option>
+                            <option value="San Francisco">San Francisco</option>
+                            <option value="San Diego">San Diego</option>
+                            <option value="Sacramento">Sacramento</option>
+                        </optgroup>
+                    </select>
+                    <span class="error" id="destination-error"></span>
+                </div>
+
+                <!-- Departure Date -->
+                <div class="form-group">
+                    <label for="departureDate">Departure Date (YYYY-MM-DD) *</label>
+                    <input type="date" id="departureDate" name="departureDate" min="2024-09-01" max="2024-12-01" required>
+                    <span class="error" id="departureDate-error"></span>
+                </div>
+
+                <!-- Return Date (for round trip) -->
+                <div class="form-group" id="returnDateGroup" style="display: none;">
+                    <label for="returnDate">Return Date (YYYY-MM-DD) *</label>
+                    <input type="date" id="returnDate" name="returnDate" min="2024-09-01" max="2024-12-01">
+                    <span class="error" id="returnDate-error"></span>
+                </div>
+
+                <!-- Passenger Icon -->
+                <div class="passenger-icon" id="passengerIcon">
+                    👥 Passengers: <span id="passengerCount">1 Adult</span>
+                </div>
+
+                <!-- Passenger Form (Hidden by default) -->
+                <div class="passenger-form" id="passengerForm">
+                    <h3 style="margin-bottom: 1rem;">Select Passengers</h3>
+
+                    <div class="form-group">
+                        <label for="adults">Adults (Max 4)</label>
+                        <input type="number" id="adults" name="adults" min="0" max="4" value="1">
+                        <span class="error" id="adults-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="children">Children (Max 4)</label>
+                        <input type="number" id="children" name="children" min="0" max="4" value="0">
+                        <span class="error" id="children-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="infants">Infants (Max 4)</label>
+                        <input type="number" id="infants" name="infants" min="0" max="4" value="0">
+                        <span class="error" id="infants-error"></span>
+                    </div>
+
+                    <button type="button" class="btn-green" id="updatePassengers">Update Passengers</button>
+                </div>
+
+                <button type="submit" style="margin-top: 1rem;">Search Flights</button>
+            </form>
+
+            <!-- Search Results -->
+            <div id="searchResults" style="display: none; margin-top: 2rem;">
+                <h3>Available Flights</h3>
+                <div id="flightsList"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Travel Deals. All rights reserved. | CS 6314 - Assignment #4</p>
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="js/flights.js"></script>
+</body>
+</html>

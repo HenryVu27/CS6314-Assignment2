@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - Travel Deals</title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Travel Deals</h1>
+        <p>Your Gateway to Amazing Adventures</p>
+        <div id="datetime"></div>
+        <div id="user-info"></div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="stays.html">Stays</a></li>
+            <li><a href="flights.html">Flights</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="my-account.html" class="active">My Account</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside>
+            <h3>Customize View</h3>
+            <div class="control-group">
+                <label for="fontSize">Font Size:</label>
+                <select id="fontSize">
+                    <option value="14px">Small</option>
+                    <option value="16px" selected>Medium</option>
+                    <option value="18px">Large</option>
+                    <option value="20px">Extra Large</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="bgColor">Background Color:</label>
+                <input type="color" id="bgColor" value="#ffffff">
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="mainContent">
+            <h2>My Account</h2>
+
+            <div id="alert-container"></div>
+
+            <!-- Admin Panel for Loading Data -->
+            <div id="adminPanel" style="display: none;">
+                <div class="admin-panel">
+                    <h3>Admin Functions</h3>
+                    <button class="btn-amber" onclick="loadFlightsData()">Load Flights JSON to Database</button>
+                    <button class="btn-amber" onclick="loadHotelsData()" style="margin-left: 1rem;">Load Hotels XML to Database</button>
+                </div>
+            </div>
+
+            <!-- User Queries -->
+            <div id="userQueries">
+                <div class="query-section">
+                    <h4>Search Booking by ID</h4>
+                    <input type="text" id="flightBookingId" placeholder="Flight Booking ID" style="margin-right: 1rem;">
+                    <button onclick="searchFlightBooking()">Search Flight Booking</button>
+                    <br><br>
+                    <input type="text" id="hotelBookingId" placeholder="Hotel Booking ID" style="margin-right: 1rem;">
+                    <button onclick="searchHotelBooking()">Search Hotel Booking</button>
+                    <div id="bookingResults" style="margin-top: 1rem;"></div>
+                </div>
+
+                <div class="query-section">
+                    <h4>My Bookings for September 2024</h4>
+                    <button onclick="getMyBookingsSeptember()">View My September Bookings</button>
+                    <div id="septemberResults" style="margin-top: 1rem;"></div>
+                </div>
+
+                <div class="query-section">
+                    <h4>Search by Passenger SSN</h4>
+                    <input type="text" id="passengerSSN" placeholder="SSN" style="margin-right: 1rem;">
+                    <button onclick="searchBySSN()">Search</button>
+                    <div id="ssnResults" style="margin-top: 1rem;"></div>
+                </div>
+            </div>
+
+            <!-- Admin Queries -->
+            <div id="adminQueries" style="display: none;">
+                <h3>Admin Queries</h3>
+
+                <div class="query-section">
+                    <h4>Flights from Texas (Sep-Oct 2024)</h4>
+                    <button onclick="getFlightsFromTexas()">View Flights</button>
+                    <div id="texasFlightsResults" style="margin-top: 1rem;"></div>
+                </div>
+
+                <div class="query-section">
+                    <h4>Hotels in Texas (Sep-Oct 2024)</h4>
+                    <button onclick="getHotelsInTexas()">View Hotels</button>
+                    <div id="texasHotelsResults" style="margin-top: 1rem;"></div>
+                </div>
+
+                <div class="query-section">
+                    <h4>Most Expensive Booked Hotels</h4>
+                    <button onclick="getMostExpensiveHotels()">View Hotels</button>
+                    <div id="expensiveHotelsResults" style="margin-top: 1rem;"></div>
+                </div>
+
+                <div class="query-section">
+                    <h4>Flights with Infant Passengers</h4>
+                    <button onclick="getFlightsWithInfants()">View Flights</button>
+                    <div id="infantFlightsResults" style="margin-top: 1rem;"></div>
+                </div>
+
+                <div class="query-section">
+                    <h4>Flights with Infant and 5+ Children</h4>
+                    <button onclick="getFlightsWithInfantsAndChildren()">View Flights</button>
+                    <div id="infantChildrenResults" style="margin-top: 1rem;"></div>
+                </div>
+
+                <div class="query-section">
+                    <h4>Most Expensive Booked Flights</h4>
+                    <button onclick="getMostExpensiveFlights()">View Flights</button>
+                    <div id="expensiveFlightsResults" style="margin-top: 1rem;"></div>
+                </div>
+
+                <div class="query-section">
+                    <h4>Flights from Texas with No Infants</h4>
+                    <button onclick="getTexasFlightsNoInfants()">View Flights</button>
+                    <div id="texasNoInfantsResults" style="margin-top: 1rem;"></div>
+                </div>
+
+                <div class="query-section">
+                    <h4>Flights to California (Sep-Oct 2024)</h4>
+                    <button onclick="getFlightsToCalifornia()">Count Flights</button>
+                    <div id="californiaFlightsResults" style="margin-top: 1rem;"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Travel Deals. All rights reserved. | CS 6314 - Assignment #4</p>
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="js/my-account.js"></script>
+</body>
+</html>

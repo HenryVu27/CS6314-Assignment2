@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Travel Deals</title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Travel Deals</h1>
+        <p>Your Gateway to Amazing Adventures</p>
+        <div id="datetime"></div>
+        <div id="user-info"></div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="stays.html">Stays</a></li>
+            <li><a href="flights.html">Flights</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="register.html" class="active">Register</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="my-account.html">My Account</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside>
+            <h3>Customize View</h3>
+            <div class="control-group">
+                <label for="fontSize">Font Size:</label>
+                <select id="fontSize">
+                    <option value="14px">Small</option>
+                    <option value="16px" selected>Medium</option>
+                    <option value="18px">Large</option>
+                    <option value="20px">Extra Large</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="bgColor">Background Color:</label>
+                <input type="color" id="bgColor" value="#ffffff">
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="mainContent">
+            <h2>Register New Account</h2>
+
+            <div id="alert-container"></div>
+
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="ddd-ddd-dddd" maxlength="12" required>
+                    <span class="error" id="phone-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                    <span class="error" id="firstName-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                    <span class="error" id="lastName-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth (MM/DD/YYYY) *</label>
+                    <input type="text" id="dob" name="dob" placeholder="MM/DD/YYYY" maxlength="10" required>
+                    <span class="error" id="dob-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error" id="email-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="gender" value="Male">
+                            Male
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="Female">
+                            Female
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="Other">
+                            Other
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password *</label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="error" id="password-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password *</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <span class="error" id="confirmPassword-error"></span>
+                </div>
+
+                <button type="submit">Register</button>
+            </form>
+
+            <p style="margin-top: 1.5rem; text-align: center;">
+                Already have an account? <a href="login.html" style="color: #2563eb; font-weight: 600;">Login here</a>
+            </p>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Travel Deals. All rights reserved. | CS 6314 - Assignment #4</p>
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>

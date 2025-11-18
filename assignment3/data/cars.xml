@@ -1,25 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <cars>
-  <car id="C001" city="Dallas" type="Economy" price="38" />
-  <car id="C002" city="Dallas" type="SUV" price="75" />
-  <car id="C003" city="Dallas" type="Compact" price="42" />
-  <car id="C004" city="Dallas" type="Midsize" price="55" />
-  <car id="C005" city="Houston" type="Economy" price="36" />
-  <car id="C006" city="Houston" type="SUV" price="72" />
-  <car id="C007" city="Austin" type="Economy" price="40" />
-  <car id="C008" city="Austin" type="Midsize" price="58" />
-  <car id="C009" city="San Antonio" type="Compact" price="41" />
-  <car id="C010" city="El Paso" type="SUV" price="70" />
-  <car id="C011" city="Los Angeles" type="Economy" price="45" />
-  <car id="C012" city="Los Angeles" type="Compact" price="48" />
-  <car id="C013" city="San Diego" type="Midsize" price="60" />
-  <car id="C014" city="San Jose" type="SUV" price="78" />
-  <car id="C015" city="San Francisco" type="Economy" price="47" />
-  <car id="C016" city="Sacramento" type="Compact" price="44" />
-  <car id="C017" city="San Francisco" type="SUV" price="82" />
-  <car id="C018" city="San Diego" type="Economy" price="43" />
-  <car id="C019" city="San Jose" type="Compact" price="49" />
-  <car id="C020" city="Sacramento" type="Midsize" price="57" />
+  <!-- Each car includes: car-id, city, type, check-in date, check-out date, and price per day -->
+  <car id="C001" city="Dallas" type="Economy" price="38" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C002" city="Dallas" type="SUV" price="75" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C003" city="Dallas" type="Compact" price="42" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C004" city="Dallas" type="Midsize" price="55" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C005" city="Houston" type="Economy" price="36" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C006" city="Houston" type="SUV" price="72" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C007" city="Austin" type="Economy" price="40" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C008" city="Austin" type="Midsize" price="58" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C009" city="San Antonio" type="Compact" price="41" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C010" city="El Paso" type="SUV" price="70" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C011" city="Los Angeles" type="Economy" price="45" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C012" city="Los Angeles" type="Compact" price="48" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C013" city="San Diego" type="Midsize" price="60" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C014" city="San Jose" type="SUV" price="78" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C015" city="San Francisco" type="Economy" price="47" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C016" city="Sacramento" type="Compact" price="44" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C017" city="San Francisco" type="SUV" price="82" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C018" city="San Diego" type="Economy" price="43" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C019" city="San Jose" type="Compact" price="49" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C020" city="Sacramento" type="Midsize" price="57" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C021" city="Dallas" type="Compact" price="43" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C022" city="Houston" type="Midsize" price="56" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C023" city="Austin" type="SUV" price="74" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C024" city="Los Angeles" type="Midsize" price="62" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
+  <car id="C025" city="San Francisco" type="Compact" price="46" checkInDate="2024-09-01" checkOutDate="2024-12-01" />
 </cars>
 
 

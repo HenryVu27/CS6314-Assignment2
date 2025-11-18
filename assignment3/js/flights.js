@@ -1,15 +1,24 @@
 (() => {
+  // Regular expressions for validation as required by assignment
+  const DATE_REGEX = /^2024-(09|10|11)-(0[1-9]|[12][0-9]|30)$|^2024-12-01$/;
+  const CITY_REGEX = /^(Austin|Dallas|Houston|San Antonio|El Paso|Los Angeles|San Diego|San Jose|San Francisco|Sacramento)$/;
+  const PASSENGER_COUNT_REGEX = /^[0-4]$/;
+
   const allowedStates = {
     Texas: ['Austin', 'Dallas', 'Houston', 'San Antonio', 'El Paso'],
     California: ['Los Angeles', 'San Diego', 'San Jose', 'San Francisco', 'Sacramento']
   };
 
-  const DATE_MIN = new Date('2024-09-01');
-  const DATE_MAX = new Date('2024-12-01');
-
   function inRange(date) {
-    const d = new Date(date);
-    return !isNaN(d) && d >= DATE_MIN && d <= DATE_MAX;
+    return DATE_REGEX.test(date);
+  }
+
+  function isValidCity(city) {
+    return CITY_REGEX.test(city);
+  }
+
+  function isValidPassengerCount(count) {
+    return PASSENGER_COUNT_REGEX.test(String(count));
   }
 
   function populateCitySelects() {
@@ -36,13 +45,13 @@
 
   function validate(formVals) {
     const errors = [];
+    // Use regex validation as required
     if (!inRange(formVals.departDate)) errors.push('Departure date must be between Sep 1 and Dec 1, 2024.');
     if (formVals.tripType === 'roundtrip' && !inRange(formVals.returnDate)) errors.push('Return date must be between Sep 1 and Dec 1, 2024.');
-    const allCities = [...allowedStates.Texas, ...allowedStates.California];
-    if (!allCities.includes(formVals.origin)) errors.push('Origin must be a city in Texas or California.');
-    if (!allCities.includes(formVals.destination)) errors.push('Destination must be a city in Texas or California.');
+    if (!isValidCity(formVals.origin)) errors.push('Origin must be a city in Texas or California.');
+    if (!isValidCity(formVals.destination)) errors.push('Destination must be a city in Texas or California.');
     const p = passengersTotal();
-    if (p.a > 4 || p.c > 4 || p.i > 4) errors.push('Passengers per category cannot exceed 4.');
+    if (!isValidPassengerCount(p.a) || !isValidPassengerCount(p.c) || !isValidPassengerCount(p.i)) errors.push('Passengers per category cannot exceed 4.');
     if (p.total <= 0) errors.push('At least one passenger is required.');
     return errors;
   }
@@ -66,7 +75,8 @@
   }
 
   async function loadFlights() {
-    const res = await fetch('data/flights.json');
+    // Add cache-busting parameter to force fresh load
+    const res = await fetch('data/flights.json?v=' + Date.now());
     return await res.json();
   }
 
@@ -136,7 +146,9 @@
       e.preventDefault();
       errorBox.textContent = '';
       const vals = getFormVals();
+      console.log('Form values:', vals);
       const errs = validate(vals);
+      console.log('Validation errors:', errs);
       if (errs.length) {
         errorBox.innerHTML = errs.map(e => `<div>• ${e}</div>`).join('');
         return;
@@ -144,31 +156,51 @@
 
       updateSummary(vals);
       const { total } = passengersTotal();
+      console.log('Total passengers:', total);
       const allFlights = await loadFlights();
+      console.log('Loaded flights:', allFlights.length);
+      // Debug: Check for specific flights
+      const testOutbound = allFlights.find(f => f.flightId === 'TXCA-008B');
+      const testReturn = allFlights.find(f => f.flightId === 'CATX-001');
+      console.log('TXCA-008B found:', testOutbound ? 'YES' : 'NO', testOutbound);
+      console.log('CATX-001 found:', testReturn ? 'YES' : 'NO', testReturn);
 
       const container = document.getElementById('flightResults');
       container.innerHTML = '';
 
       if (vals.tripType === 'oneway') {
         let matches = findMatchingFlights(allFlights, vals.origin, vals.destination, vals.departDate, total);
+        console.log('Exact matches found:', matches.length);
         if (matches.length === 0) {
           matches = findNearbyFlights(allFlights, vals.origin, vals.destination, vals.departDate, total);
+          console.log('Nearby matches found:', matches.length);
         }
         if (matches.length === 0) {
-          container.innerHTML = '<div class="results show"><p>No available flights found.</p></div>';
+          container.innerHTML = '<div class="results show error"><p>No available flights found.</p></div>';
           return;
         }
+        console.log('Rendering', matches.length, 'flights');
         container.innerHTML = `<div class="results show"><h3>Available Flights</h3>${matches.map(formatFlight).join('')}</div>`;
         wireResultButtons(container);
       } else {
         // roundtrip: find outbound and return
         let departMatches = findMatchingFlights(allFlights, vals.origin, vals.destination, vals.departDate, total);
-        if (departMatches.length === 0) departMatches = findNearbyFlights(allFlights, vals.origin, vals.destination, vals.departDate, total);
+        console.log('Exact depart matches:', departMatches.length);
+        if (departMatches.length === 0) {
+          departMatches = findNearbyFlights(allFlights, vals.origin, vals.destination, vals.departDate, total);
+          console.log('Nearby depart matches:', departMatches.length);
+        }
         let returnMatches = findMatchingFlights(allFlights, vals.destination, vals.origin, vals.returnDate, total);
-        if (returnMatches.length === 0) returnMatches = findNearbyFlights(allFlights, vals.destination, vals.origin, vals.returnDate, total);
+        console.log('Exact return matches:', returnMatches.length);
+        if (returnMatches.length === 0) {
+          returnMatches = findNearbyFlights(allFlights, vals.destination, vals.origin, vals.returnDate, total);
+          console.log('Nearby return matches:', returnMatches.length);
+        }
+
+        console.log('Final depart matches:', departMatches.length, 'Final return matches:', returnMatches.length);
 
         if (departMatches.length === 0 && returnMatches.length === 0) {
-          container.innerHTML = '<div class="results show"><p>No available flights found for both legs.</p></div>';
+          container.innerHTML = '<div class="results show error"><p>No available flights found for both legs.</p></div>';
           return;
         }
 

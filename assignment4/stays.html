@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stays - Travel Deals</title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Travel Deals</h1>
+        <p>Your Gateway to Amazing Adventures</p>
+        <div id="datetime"></div>
+        <div id="user-info"></div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="stays.html" class="active">Stays</a></li>
+            <li><a href="flights.html">Flights</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="my-account.html">My Account</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside>
+            <h3>Customize View</h3>
+            <div class="control-group">
+                <label for="fontSize">Font Size:</label>
+                <select id="fontSize">
+                    <option value="14px">Small</option>
+                    <option value="16px" selected>Medium</option>
+                    <option value="18px">Large</option>
+                    <option value="20px">Extra Large</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="bgColor">Background Color:</label>
+                <input type="color" id="bgColor" value="#ffffff">
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="mainContent">
+            <h2>Search Hotels</h2>
+
+            <div id="alert-container"></div>
+
+            <form id="hotelSearchForm">
+                <div class="form-group">
+                    <label for="city">City (in Texas or California) *</label>
+                    <select id="city" name="city" required>
+                        <option value="">Select City</option>
+                        <optgroup label="Texas">
+                            <option value="Dallas">Dallas</option>
+                            <option value="Houston">Houston</option>
+                            <option value="Austin">Austin</option>
+                            <option value="San Antonio">San Antonio</option>
+                        </optgroup>
+                        <optgroup label="California">
+                            <option value="Los Angeles">Los Angeles</option>
+                            <option value="San Francisco">San Francisco</option>
+                            <option value="San Diego">San Diego</option>
+                            <option value="Sacramento">Sacramento</option>
+                        </optgroup>
+                    </select>
+                    <span class="error" id="city-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkIn">Check-in Date (YYYY-MM-DD) *</label>
+                    <input type="date" id="checkIn" name="checkIn" min="2024-09-01" max="2024-12-01" required>
+                    <span class="error" id="checkIn-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkOut">Check-out Date (YYYY-MM-DD) *</label>
+                    <input type="date" id="checkOut" name="checkOut" min="2024-09-01" max="2024-12-01" required>
+                    <span class="error" id="checkOut-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="adultsGuests">Adults (Max 2 per room)</label>
+                    <input type="number" id="adultsGuests" name="adultsGuests" min="0" max="20" value="2">
+                    <span class="error" id="adultsGuests-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="childrenGuests">Children (Max 2 per room)</label>
+                    <input type="number" id="childrenGuests" name="childrenGuests" min="0" max="20" value="0">
+                    <span class="error" id="childrenGuests-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="infantsGuests">Infants (Can exceed room limit)</label>
+                    <input type="number" id="infantsGuests" name="infantsGuests" min="0" max="20" value="0">
+                    <span class="error" id="infantsGuests-error"></span>
+                </div>
+
+                <button type="submit">Search Hotels</button>
+            </form>
+
+            <!-- Search Results -->
+            <div id="searchResults" style="display: none; margin-top: 2rem;">
+                <h3>Available Hotels</h3>
+                <div id="hotelsList"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Travel Deals. All rights reserved. | CS 6314 - Assignment #4</p>
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="js/stays.js"></script>
+</body>
+</html>

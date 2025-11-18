@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hotels>
+    <hotel>
+        <hotel_id>HTX001</hotel_id>
+        <hotel_name>Grand Dallas Hotel</hotel_name>
+        <city>Dallas</city>
+        <price_per_night>189.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HTX002</hotel_id>
+        <hotel_name>Houston Premium Suites</hotel_name>
+        <city>Houston</city>
+        <price_per_night>169.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HTX003</hotel_id>
+        <hotel_name>Austin Executive Inn</hotel_name>
+        <city>Austin</city>
+        <price_per_night>179.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HTX004</hotel_id>
+        <hotel_name>San Antonio Riverwalk Hotel</hotel_name>
+        <city>San Antonio</city>
+        <price_per_night>159.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HCA001</hotel_id>
+        <hotel_name>Los Angeles Luxury Resort</hotel_name>
+        <city>Los Angeles</city>
+        <price_per_night>249.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HCA002</hotel_id>
+        <hotel_name>San Francisco Bay View Hotel</hotel_name>
+        <city>San Francisco</city>
+        <price_per_night>279.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HCA003</hotel_id>
+        <hotel_name>San Diego Beachfront Resort</hotel_name>
+        <city>San Diego</city>
+        <price_per_night>229.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HCA004</hotel_id>
+        <hotel_name>Sacramento Capitol Hotel</hotel_name>
+        <city>Sacramento</city>
+        <price_per_night>149.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HTX005</hotel_id>
+        <hotel_name>Dallas Business Center Hotel</hotel_name>
+        <city>Dallas</city>
+        <price_per_night>199.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HTX006</hotel_id>
+        <hotel_name>Houston Downtown Suites</hotel_name>
+        <city>Houston</city>
+        <price_per_night>189.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HTX007</hotel_id>
+        <hotel_name>Austin Music District Hotel</hotel_name>
+        <city>Austin</city>
+        <price_per_night>169.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HCA005</hotel_id>
+        <hotel_name>Los Angeles Hollywood Inn</hotel_name>
+        <city>Los Angeles</city>
+        <price_per_night>239.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HCA006</hotel_id>
+        <hotel_name>San Francisco Golden Gate Suites</hotel_name>
+        <city>San Francisco</city>
+        <price_per_night>289.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HCA007</hotel_id>
+        <hotel_name>San Diego Marina Hotel</hotel_name>
+        <city>San Diego</city>
+        <price_per_night>219.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HTX008</hotel_id>
+        <hotel_name>San Antonio Historic Plaza Hotel</hotel_name>
+        <city>San Antonio</city>
+        <price_per_night>149.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HCA008</hotel_id>
+        <hotel_name>Sacramento River Inn</hotel_name>
+        <city>Sacramento</city>
+        <price_per_night>139.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HTX009</hotel_id>
+        <hotel_name>Dallas Convention Center Hotel</hotel_name>
+        <city>Dallas</city>
+        <price_per_night>209.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HTX010</hotel_id>
+        <hotel_name>Houston Airport Suites</hotel_name>
+        <city>Houston</city>
+        <price_per_night>159.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HCA009</hotel_id>
+        <hotel_name>Los Angeles Downtown Towers</hotel_name>
+        <city>Los Angeles</city>
+        <price_per_night>259.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HCA010</hotel_id>
+        <hotel_name>San Francisco Fisherman's Wharf Hotel</hotel_name>
+        <city>San Francisco</city>
+        <price_per_night>269.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HTX011</hotel_id>
+        <hotel_name>Austin Lake Travis Resort</hotel_name>
+        <city>Austin</city>
+        <price_per_night>199.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HCA011</hotel_id>
+        <hotel_name>San Diego Old Town Inn</hotel_name>
+        <city>San Diego</city>
+        <price_per_night>209.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HTX012</hotel_id>
+        <hotel_name>San Antonio Alamo Hotel</hotel_name>
+        <city>San Antonio</city>
+        <price_per_night>179.99</price_per_night>
+    </hotel>
+    <hotel>
+        <hotel_id>HCA012</hotel_id>
+        <hotel_name>Sacramento State Capitol Suites</hotel_name>
+        <city>Sacramento</city>
+        <price_per_night>169.99</price_per_night>
+    </hotel>
+</hotels>

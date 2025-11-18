@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Travel Deals</title>
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Travel Deals</h1>
+        <p>Your Gateway to Amazing Adventures</p>
+        <div id="datetime"></div>
+        <div id="user-info"></div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="stays.html">Stays</a></li>
+            <li><a href="flights.html">Flights</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="login.html" class="active">Login</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="my-account.html">My Account</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <aside>
+            <h3>Customize View</h3>
+            <div class="control-group">
+                <label for="fontSize">Font Size:</label>
+                <select id="fontSize">
+                    <option value="14px">Small</option>
+                    <option value="16px" selected>Medium</option>
+                    <option value="18px">Large</option>
+                    <option value="20px">Extra Large</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label for="bgColor">Background Color:</label>
+                <input type="color" id="bgColor" value="#ffffff">
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main id="mainContent">
+            <h2>Login to Your Account</h2>
+
+            <div id="alert-container"></div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="ddd-ddd-dddd" maxlength="12" required>
+                    <span class="error" id="phone-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="error" id="password-error"></span>
+                </div>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <p style="margin-top: 1.5rem; text-align: center;">
+                Don't have an account? <a href="register.html" style="color: #2563eb; font-weight: 600;">Register here</a>
+            </p>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Travel Deals. All rights reserved. | CS 6314 - Assignment #4</p>
+    </footer>
+
+    <script src="common.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>
